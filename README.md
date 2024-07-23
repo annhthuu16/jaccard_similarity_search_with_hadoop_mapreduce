@@ -17,8 +17,8 @@ The Jaccard coefficient varies between 0 and 1 (0 <= Jaccard coefficient <= 1). 
 This section explains how the Jaccard-based method reduces the number of MapReduce jobs required for similarity search, thereby improving overall performance.  
 The implementation consists of two main phases, each handled by a separate MapReduce job.
 
-![MapReduce-1 Overview](https://github.com/user-attachments/assets/a2867732-26d9-4891-8716-d112af4d7b45)  
-*Overview of MapReduce-1: The process of building the customized inverted index.*
+(https://github.com/user-attachments/assets/a2867732-26d9-4891-8716-d112af4d7b45)  
+Overview of MapReduce-1: The process of building the customized inverted index.
 
 #### Phase 1: (MapReduce-1): Building the Customized Inverted Index 
 The objective of this phase is to construct a customized inverted index from the dataset and a given query object. This phase includes the following steps:
