@@ -7,9 +7,9 @@ MapReduce, a parallel programming model, has emerged as a promising solution for
 Handling large datasets for similarity searches can be inefficient due to redundant data and high computational costs. Instant approaches use the MapReduce paradigm and inverted indices to focus on relevant data, enhancing performance. By filtering out irrelevant data based on the given query, these methods reduce the computational load and improve efficiency, making them well-suited for large-scale data analysis.  
 The Jaccard Algorithm measures similarity between finite sample sets and is calculated by the size of the intersection divided by the size of the union of the sample sets. 
 
-\[
+$$
 J(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
-\]
+$$
 
 The Jaccard coefficient varies between 0 and 1 (0 <= Jaccard coefficient <= 1). When the coefficient is equal to 0, there is no similarity between the two sets and vice versa.
 
