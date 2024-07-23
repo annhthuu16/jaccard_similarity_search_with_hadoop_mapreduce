@@ -17,7 +17,8 @@ The Jaccard coefficient varies between 0 and 1 (0 <= Jaccard coefficient <= 1). 
 This section explains how the Jaccard-based method reduces the number of MapReduce jobs required for similarity search, thereby improving overall performance.  
 The implementation consists of two main phases, each handled by a separate MapReduce job.
 
-![image](https://github.com/user-attachments/assets/a2867732-26d9-4891-8716-d112af4d7b45)
+![MapReduce-1 Overview](https://github.com/user-attachments/assets/a2867732-26d9-4891-8716-d112af4d7b45)  
+*Overview of MapReduce-1: The process of building the customized inverted index.*
 
 #### Phase 1: (MapReduce-1): Building the Customized Inverted Index 
 The objective of this phase is to construct a customized inverted index from the dataset and a given query object. This phase includes the following steps:
@@ -25,8 +26,8 @@ The objective of this phase is to construct a customized inverted index from the
 - **Common Term Filtering**: Discard common terms that appear frequently across the dataset.
 - **Lonely Term Filtering**: Eliminate terms that appear in only one document (lonely terms).
 
-![image](https://github.com/user-attachments/assets/50e88be9-3582-4e20-bacf-38f7acaa843d)
-*Mapreduce-1 from the Jaccard-based method when given a query object (Phan et al., 2014)
+![Inverted Index Construction](https://github.com/user-attachments/assets/50e88be9-3582-4e20-bacf-38f7acaa843d)  
+*Building the inverted index for the Jaccard-based method with a given query object (Phan et al., 2014).*
 
 The filtering processes ensure that only relevant and meaningful terms are included in the inverted index. The resulting index pairs each term with the documents in which it appears, sorted by their relevance scores.
 
@@ -42,5 +43,5 @@ This phase utilizes the customized inverted index to compute similarity scores b
 - **MAP-2**: This task processes the key-value pairs from the REDUCE-1 task and emits candidate pairs.
 - **REDUCE-2**: The final reducer aggregates the candidate pairs and computes their similarity scores, producing the final similarity ranking.
 
-![image](https://github.com/user-attachments/assets/e59ce7d3-f087-4153-887d-c74f413b6b06)
-*MapReduce-2 from the Jaccard-based method when given a query object (Phan et al., 2014)
+![MapReduce-2 Overview](https://github.com/user-attachments/assets/e59ce7d3-f087-4153-887d-c74f413b6b06)  
+*Overview of MapReduce-2: Computing similarity scores with the customized inverted index (Phan et al., 2014).*
